@@ -1,11 +1,10 @@
 /*
- * Copyright (c) 2015 David Shen. All Rights Reserved.
+ * Copyright (c) 2015 CubeXMC. All Rights Reserved.
  * Created by PantherMan594.
  */
 
 package net.cubexmc.sfaddon;
 
-import com.oracle.jrockit.jfr.EventDefinition;
 import me.konsolas.aac.api.HackType;
 import me.konsolas.aac.api.PlayerViolationEvent;
 import net.md_5.bungee.api.ChatColor;
