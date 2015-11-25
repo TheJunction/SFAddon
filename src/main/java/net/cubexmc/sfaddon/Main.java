@@ -27,7 +27,7 @@ public class Main extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerViolation(PlayerViolationEvent e) {
-        if (e.getHackType().equals(HackType.FASTBREAK)) {
+        if (e.getHackType().equals(HackType.FASTBREAK) || e.getHackType().equals(HackType.IMPOSSIBLEINTERACT)) {
             String name = e.getPlayer().getItemInHand().getItemMeta().getDisplayName();
             if (name.equals(ChatColor.GOLD + "Lumber Axe") || name.equals(ChatColor.YELLOW + "Explosive Pickaxe")
                     || name.equals(ChatColor.YELLOW + "Pickaxe of Vein Mining")) {
