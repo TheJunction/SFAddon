@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  ~ Copyright (c) 2015 CubeXMC. All Rights Reserved.
+  ~ Copyright (c) 2016 CubeXMC. All Rights Reserved.
   ~ Created by PantherMan594.
   -->
 
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>me.kinsolas</groupId>
             <artifactId>aac</artifactId>
-            <version>1.9.6-b4</version>
+            <version>1.9.7-b32</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/libs/AAC.jar</systemPath>
         </dependency>

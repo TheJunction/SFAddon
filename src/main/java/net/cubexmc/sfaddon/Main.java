@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 CubeXMC. All Rights Reserved.
+ * Copyright (c) 2016 CubeXMC. All Rights Reserved.
  * Created by PantherMan594.
  */
 
@@ -28,15 +28,19 @@ public class Main extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerViolation(PlayerViolationEvent e) {
         if (e.getHackType().equals(HackType.FASTBREAK) || e.getHackType().equals(HackType.IMPOSSIBLEINTERACT)) {
-            String name = e.getPlayer().getItemInHand().getItemMeta().getDisplayName();
-            if (name.equals(ChatColor.GOLD + "Lumber Axe") || name.equals(ChatColor.YELLOW + "Explosive Pickaxe")
-                    || name.equals(ChatColor.YELLOW + "Pickaxe of Vein Mining")) {
-                e.setCancelled(true);
+            if (e.getPlayer().getItemInHand() != null && e.getPlayer().getItemInHand().getItemMeta() != null && e.getPlayer().getItemInHand().getItemMeta().getDisplayName() != null) {
+                String name = e.getPlayer().getItemInHand().getItemMeta().getDisplayName();
+                if (name.equals(ChatColor.GOLD + "Lumber Axe") || name.equals(ChatColor.YELLOW + "Explosive Pickaxe")
+                        || name.equals(ChatColor.YELLOW + "Pickaxe of Vein Mining")) {
+                    e.setCancelled(true);
+                }
             }
         } else if (e.getHackType().equals(HackType.FLY)) {
-            String name = e.getPlayer().getItemInHand().getItemMeta().getDisplayName();
-            if (name.equals(ChatColor.GOLD + "Elemental Staff " + ChatColor.GRAY + "- " + ChatColor.AQUA + ChatColor.ITALIC + "Wind")) {
-                e.setCancelled(true);
+            if (e.getPlayer().getItemInHand() != null && e.getPlayer().getItemInHand().getItemMeta() != null && e.getPlayer().getItemInHand().getItemMeta().getDisplayName() != null) {
+                String name = e.getPlayer().getItemInHand().getItemMeta().getDisplayName();
+                if (name.equals(ChatColor.GOLD + "Elemental Staff " + ChatColor.GRAY + "- " + ChatColor.AQUA + ChatColor.ITALIC + "Wind")) {
+                    e.setCancelled(true);
+                }
             }
         }
     }
@@ -44,9 +48,11 @@ public class Main extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerKick(PlayerKickEvent e) {
         if (e.getReason().equals("Flying is not enabled on this server")) {
-            String name = e.getPlayer().getItemInHand().getItemMeta().getDisplayName();
-            if (name.equals(ChatColor.GOLD + "Elemental Staff " + ChatColor.GRAY + "- " + ChatColor.AQUA + ChatColor.ITALIC + "Wind")) {
-                e.setCancelled(true);
+            if (e.getPlayer().getItemInHand() != null && e.getPlayer().getItemInHand().getItemMeta() != null && e.getPlayer().getItemInHand().getItemMeta().getDisplayName() != null) {
+                String name = e.getPlayer().getItemInHand().getItemMeta().getDisplayName();
+                if (name.equals(ChatColor.GOLD + "Elemental Staff " + ChatColor.GRAY + "- " + ChatColor.AQUA + ChatColor.ITALIC + "Wind")) {
+                    e.setCancelled(true);
+                }
             }
         }
     }
